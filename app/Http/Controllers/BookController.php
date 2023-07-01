@@ -7,6 +7,7 @@ use App\Models\Book;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Log;
+use App\Http\Requests\SaveBookRequest;
 
 class BookController extends Controller
 {
@@ -40,7 +41,7 @@ class BookController extends Controller
         }
     }
 
-    public function store(Request $request)
+    public function store(SaveBookRequest $request)
     {
         try {
             $book = Book::create($request->all());
@@ -53,7 +54,7 @@ class BookController extends Controller
         }
     }
 
-    public function update(Request $request, $id)
+    public function update(SaveBookRequest $request, $id)
     {
         try {
             $book = Book::find($id);
