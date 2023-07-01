@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api\V1;
 
 use Exception;
 use App\Models\Book;
@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Log;
 use App\Http\Requests\SaveBookRequest;
+use App\Http\Controllers\Api\Controller;
 
 class BookController extends Controller
 {
