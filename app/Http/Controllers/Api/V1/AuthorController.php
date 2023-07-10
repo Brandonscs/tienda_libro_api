@@ -29,7 +29,7 @@ class AuthorController extends Controller
     {
         $author = Author::create($request->all());
 
-        return response()->json(['success' => true, 'message' => 'Autor creado.', 'data' => $author], Response::HTTP_CREATED);
+        return response()->json(['success' => true, 'message' => trans('messages.author.created'), 'data' => $author], Response::HTTP_CREATED);
     }
 
     public function update(SaveAuthorRequest $request, $id)
@@ -39,7 +39,7 @@ class AuthorController extends Controller
         return $this->checkModelExistsAuthor(function () use ($author, $request) {
             $author->update($request->all());
 
-            return response()->json(['success' => true, 'message' => 'Autor actualizado.', 'data' => $author], Response::HTTP_CREATED);
+            return response()->json(['success' => true, 'message' => trans('messages.author.updated'), 'data' => $author], Response::HTTP_CREATED);
         }, $author);
     }
 

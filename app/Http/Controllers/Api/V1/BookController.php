@@ -29,7 +29,7 @@ class BookController extends Controller
     {
         $book = Book::create($request->all());
 
-        return response()->json(['success' => true, 'message' => 'Libro creado.', 'data' => $book], Response::HTTP_CREATED);
+        return response()->json(['success' => true, 'message' => trans('messages.book.created'), 'data' => $book], Response::HTTP_CREATED);
     }
 
     public function update(SaveBookRequest $request, $id)
@@ -39,7 +39,7 @@ class BookController extends Controller
         return $this->checkModelExistsBook(function () use ($book, $request) {
             $book->update($request->all());
 
-            return response()->json(['success' => true, 'message' => 'Libro actualizado.', 'data' => $book], Response::HTTP_CREATED);
+            return response()->json(['success' => true, 'message' => trans('messages.book.updated'), 'data' => $book], Response::HTTP_CREATED);
         }, $book);
     }
 

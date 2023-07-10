@@ -37,7 +37,7 @@ class Handler extends ExceptionHandler
 
             return response()->json([
                 'success' => false,
-                'message' => 'Error de servidor',
+                'message' => trans('messages.global_errors.internal_server_error'),
                 'info' => $exeption->getMessage(),
                 'file' => $exeption->getFile(),
                 'line' => $exeption->getLine(),

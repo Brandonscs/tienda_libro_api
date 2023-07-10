@@ -15,7 +15,7 @@ class Controller extends BaseController
     protected function checkModelExistsBook(Closure $callback, $model)
     {
         if (empty($model)) {
-            return response()->json(['success' => false, 'message' => 'No existe este libro'], Response::HTTP_NOT_FOUND);
+            return response()->json(['success' => false, 'message' => trans('messages.book.not_found')], Response::HTTP_NOT_FOUND);
         } else {
             return $callback();
         }
@@ -24,7 +24,7 @@ class Controller extends BaseController
     protected function checkModelExistsAuthor(Closure $callback, $model)
     {
         if (empty($model)) {
-            return response()->json(['success' => false, 'message' => 'No existe el autor'], Response::HTTP_NOT_FOUND);
+            return response()->json(['success' => false, 'message' => trans('messages.author.not_found')], Response::HTTP_NOT_FOUND);
         } else {
             return $callback();
         }
