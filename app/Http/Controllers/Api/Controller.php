@@ -12,19 +12,10 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, ValidatesRequests;
 
-    protected function checkModelExistsBook(Closure $callback, $model)
+    protected function checkModelExists(Closure $callback, $model, $message)
     {
         if (empty($model)) {
-            return response()->json(['success' => false, 'message' => trans('messages.book.not_found')], Response::HTTP_NOT_FOUND);
-        } else {
-            return $callback();
-        }
-    }
-
-    protected function checkModelExistsAuthor(Closure $callback, $model)
-    {
-        if (empty($model)) {
-            return response()->json(['success' => false, 'message' => trans('messages.author.not_found')], Response::HTTP_NOT_FOUND);
+            return response()->json(['success' => false, 'message' => $message], Response::HTTP_NOT_FOUND);
         } else {
             return $callback();
         }

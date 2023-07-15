@@ -20,9 +20,9 @@ class AuthorController extends Controller
     {
         $author = Author::find($id);
 
-        return $this->checkModelExistsAuthor(function () use ($author) {
+        return $this->checkModelExists(function () use ($author) {
             return response()->json(['success' => true, 'data' => $author]);
-        }, $author);
+        }, $author, trans('messages.author.not_found'));
     }
 
     public function store(SaveAuthorRequest $request)
@@ -36,21 +36,21 @@ class AuthorController extends Controller
     {
         $author = Author::find($id);
 
-        return $this->checkModelExistsAuthor(function () use ($author, $request) {
+        return $this->checkModelExists(function () use ($author, $request) {
             $author->update($request->all());
 
             return response()->json(['success' => true, 'message' => trans('messages.author.updated'), 'data' => $author], Response::HTTP_CREATED);
-        }, $author);
+        }, $author, trans('messages.author.not_found'));
     }
 
     public function destroy($id)
     {
         $author = Author::find($id);
 
-        return $this->checkModelExistsAuthor(function () use ($author) {
+        return $this->checkModelExists(function () use ($author) {
             $author->delete();
 
             return response()->json(null, Response::HTTP_NO_CONTENT);
-        }, $author);
+        }, $author, trans('messages.author.not_found'));
     }
 }

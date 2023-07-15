@@ -20,9 +20,9 @@ class BookController extends Controller
     {
         $book = Book::find($id);
 
-        return $this->checkModelExistsBook(function () use ($book) {
+        return $this->checkModelExists(function () use ($book) {
             return response()->json(['success' => true, 'data' => $book]);
-        }, $book);
+        }, $book, trans('messages.book.not_found'));
     }
 
     public function store(SaveBookRequest $request)
@@ -36,21 +36,21 @@ class BookController extends Controller
     {
         $book = Book::find($id);
 
-        return $this->checkModelExistsBook(function () use ($book, $request) {
+        return $this->checkModelExists(function () use ($book, $request) {
             $book->update($request->all());
 
             return response()->json(['success' => true, 'message' => trans('messages.book.updated'), 'data' => $book], Response::HTTP_CREATED);
-        }, $book);
+        }, $book, trans('messages.book.not_found'));
     }
 
     public function destroy($id)
     {
         $book = Book::find($id);
 
-        return $this->checkModelExistsBook(function () use ($book){
+        return $this->checkModelExists(function () use ($book){
             $book->delete();
 
             return response()->json(null, Response::HTTP_NO_CONTENT);
-        }, $book);
+        }, $book, trans('messages.book.not_found'));
     }
 }
