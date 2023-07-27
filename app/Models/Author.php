@@ -11,7 +11,7 @@ class Author extends Model
 
     public $timetamps = true;
 
-    protected $fillable = ['name', 'nationality', 'description', 'created_at', 'updated_at'];
+    protected $fillable = ['name', 'nationality', 'biography', 'created_at', 'updated_at'];
 
     public function books()
     {

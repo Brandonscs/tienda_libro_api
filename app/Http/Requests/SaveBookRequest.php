@@ -22,11 +22,10 @@ class SaveBookRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'category_id' => 'required|integer|exists:categories,id',
             'book_name' => 'required|string|max:255',
-            'author_id' => 'required|integer|exists:authors,id',
             'book_description' => 'required|string|max:3000',
             'book_image' => 'required|string|max:255',
+            'category' => 'required|integer|exists:categories,id'
         ];
     }
 }

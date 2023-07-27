@@ -24,7 +24,7 @@ class SaveAuthorRequest extends FormRequest
         return [
             'name' => 'required|string|max:255',
             'nationality' => 'required|string|max:255',
-            'description' => 'required|string|max:3000',
+            'biography' => 'required|string|max:3000',
         ];
     }
 }
