@@ -15,33 +15,33 @@ class LiteraryGenreSeeder extends Seeder
     {
         $literary_genres = [
             [
-                'name' => 'Novela',
-                'description' => 'Una obra de ficción narrativa de extensión variable, generalmente en prosa, que presenta una trama y desarrollo de personajes complejo.'
+                'name' => 'Realismo Mágico',
+                'description' => 'Un género literario que combina elementos mágicos o fantásticos con una representación detallada y realista del mundo cotidiano.'
             ],
             [
-                'name' => 'Poesía',
-                'description' => 'Expresión artística que utiliza recursos estilísticos y métricos para transmitir emociones, pensamientos o ideas en forma de versos.'
+                'name' => 'Ciencia Ficción',
+                'description' => 'Narrativas que exploran conceptos científicos y tecnológicos imaginarios o futuristas, así como sus impactos en la sociedad y la humanidad.'
             ],
             [
-                'name' => 'Drama',
-                'description' => 'Una obra teatral que representa conflictos y emociones de personajes a través de diálogos y acciones.'
+                'name' => 'Terror',
+                'description' => 'Género que busca provocar miedo o suspense en el lector, a menudo mediante elementos sobrenaturales, monstruos o situaciones inquietantes.'
             ],
             [
-                'name' => 'Ciencia ficción',
-                'description' => 'Narrativa especulativa que se basa en conceptos científicos reales o imaginarios, explorando mundos y situaciones futuristas o alternativas.'
+                'name' => 'Humor',
+                'description' => 'Obras que buscan entretener y hacer reír al lector mediante situaciones cómicas, sátira y elementos humorísticos.'
             ],
             [
-                'name' => 'Misterio',
-                'description' => 'Historias intrigantes en las que un evento o crimen debe ser resuelto por el protagonista o protagonistas.'
+                'name' => 'Historia',
+                'description' => 'Relatos basados en hechos reales y acontecimientos históricos, narrados con un enfoque en la precisión y la veracidad histórica.'
             ],
             [
                 'name' => 'Fantasía',
-                'description' => 'Ambientada en un mundo imaginario con elementos sobrenaturales, criaturas mágicas y aventuras épicas.'
+                'description' => 'Género que presenta mundos imaginarios, criaturas mágicas y eventos sobrenaturales, desafiando las leyes de la realidad.'
             ],
             [
-                'name' => 'Ensayo',
-                'description' => 'Un escrito que presenta la opinión o punto de vista del autor sobre un tema específico, argumentando sus ideas con razonamientos y evidencias.'
-            ]
+                'name' => 'Suspense',
+                'description' => 'Narrativas que mantienen al lector en tensión y expectante, con giros inesperados y situaciones emocionantes que mantienen el interés hasta el final.'
+            ]                                                                                    
         ];
 
         DB::table('literary_genres')->insert($literary_genres);
