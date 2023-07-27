@@ -13,8 +13,18 @@ class Book extends Model
 
     protected $fillable = ['book_name', 'book_description', 'book_image', 'category', 'created_at', 'updated_at'];
 
-    public function category()
+    public function categories()
     {
-        return $this->belongsTo(Category::class);
+        return $this->belongsTo(Category::class, 'category');
+    }
+
+    public function authors()
+    {
+        return $this->belongsToMany(Author::class, 'books_authors', 'book_id', 'author_id');
+    }
+
+    public function literaryGenres()
+    {
+        return $this->belongsToMany(LiteraryGenre::class, 'books_literary_genres', 'book_id', 'literary_genre_id');
     }
 }

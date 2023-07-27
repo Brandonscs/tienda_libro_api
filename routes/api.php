@@ -4,6 +4,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\V1\BookController;
 use App\Http\Controllers\Api\V1\AuthorController;
+use App\Http\Controllers\Api\V1\CategoryController;
+use App\Http\Controllers\Api\V1\LiteraryGenreController;
 use App\Http\Controllers\Api\V1\Auth\AuthController;
 
 /*
@@ -32,5 +34,11 @@ Route::prefix('v1')->group(function() {
 
         #---------------------------------Author---------------------------------
         Route::apiResource('authors', AuthorController::class);
+
+        #---------------------------------Category---------------------------------
+        Route::apiResource('categories', CategoryController::class);
+
+        #---------------------------------literary Genre---------------------------------
+        Route::apiResource('literary_genres', LiteraryGenreController::class);
     });
 });

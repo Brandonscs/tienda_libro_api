@@ -25,7 +25,11 @@ class SaveBookRequest extends FormRequest
             'book_name' => 'required|string|max:255',
             'book_description' => 'required|string|max:3000',
             'book_image' => 'required|string|max:255',
-            'category' => 'required|integer|exists:categories,id'
+            'category' => 'required|integer|exists:categories,id',
+            'author_id' => 'required|array',
+            'author_id.*' => 'required|integer|exists:authors,id',
+            'literary_genre_id' => 'required|array',
+            'literary_genre_id.*' => 'required|integer|exists:literary_genres,id'
         ];
     }
 }
